@@ -82,7 +82,7 @@ function initializePlugin(): () => void {
 		const pw = popup?.window ?? undefined;
 		if (!pw)
 		{
-			log("popup.window is not available. popup.window: '", popup ? popup.window : undefined, "'");
+			log("The popup window was not available.");
 			return;
 		}
 
@@ -91,8 +91,6 @@ function initializePlugin(): () => void {
 			log('Ignoring invalid popup type: ', type);
 			return;
 		}
-
-		log('onPopupCreate called. popup: ', popup, ' type: ', type);
 
 		unregisterLocChange = onLocationChange(
 			() => {
